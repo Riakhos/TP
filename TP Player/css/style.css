@@ -1,0 +1,277 @@
+/** font **/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/***reset de style***/
+*{    
+   margin: 0;
+   padding: 0;
+   outline: none;
+   box-sizing: border-box;
+}
+html{
+    font-size: 62.5;
+}
+html,body{
+    width: 100%;
+    height: 100%;    
+    position: relative;
+}
+body{
+    font-size: 1.6rem; /** = 16px **/
+    font-family: 'Roboto' , sans-serif;
+    line-height: 1.333;
+/**!vérifier la license de la police**/
+}
+a{
+    text-decoration: none;
+}
+ul,ol{
+    list-style: none;
+}
+/** main **/
+main {
+    width: 100%;
+    height: 100%;
+    background: url('../img/bg_accueil.png') center center no-repeat fixed;
+    background-size: cover;
+    padding:0 4.16666666%;
+}
+main>header{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+main>header h1{
+    width: 150px;
+    font-size: 2.2rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+.container-menu{
+    display: flex;
+    align-items: center;
+}
+.container-menu button{
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.container-menu button:first-child{
+    background: url('../img/btn_playlist.png') center center no-repeat;
+    background-size: 60% auto;
+}
+.search-song{
+    display: flex;
+    align-items: center;
+}
+.search-song input{
+    height: 30px;
+    border: none;
+    padding-left: 5px;
+    border-radius: 3px;
+    box-shadow: inset 0 0 5px 0 rgba(0, 0, 0.5);
+    /** inset = ombre intérieur, 0 = x, 0 = y, 5px = bleur, 0 =spread (écartement de l'ombre) et la couleur **/
+    opacity: 0;
+    width: 0px;
+    transition: all 300ms ease-in-out;
+}
+.search-song:hover input{
+    opacity: 1;
+    width: 200px;
+}
+.search-song button{
+    background: url('../img/btn_search.svg')
+    center center no-repeat;
+    background-size: 60% auto;
+}
+.container-menu button:nth-child(3){
+    /* permet de sélectionner précisément un élément dans un ensemble */
+    background: url('../img/btn_genre.png') center center no-repeat;
+    background-size: 60% auto;
+}
+/*** menu global ***/
+.menu-global-panel{
+    position: fixed;
+    top: 0;
+    right: -140px;
+    height: 100%;
+    width: 180px;
+    padding: 80px 0 10px 0;
+    transition: right 400ms ease-in-out;
+}
+.menu-global-panel.open{
+    right: 0;
+}
+.menu-global-btn{    
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 24px;
+    right: 20px;
+    cursor: pointer;
+}
+/* before et after permettent de créer des pseudos'éléments (des  balises qui n'existent que dans le css).
+   Ces pseudos éléments sont une copie virtuel d'un élément déjà existant (ici un span).
+   Pour exister, ils ont impérativement besoin de la propriété "content" avec n'importe quelle valeur (ici un expace).
+   Lors de leurs créations leurs points d'origines (x-0,y-0) est calculé à partir du point d'origine de leurs "parents". */
+.menu-global-btn span, .menu-global-btn span:before, .menu-global-btn span:after{
+    background-color: #fff;
+    width: 15px;
+    height: 3px;
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 5px;
+    transition: all 400ms ease-in-out;
+}
+.menu-global-btn span:before, .menu-global-btn span:after{
+    content: " ";
+}
+.menu-global-btn span:before{
+    top:-10px;
+    width: 25px;
+    right: 0;
+}
+.menu-global-btn span:after{
+    top:10px;
+    width: 20px;
+    right: 0;
+}
+/** animation btn **/
+.menu-global-panel.open .menu-global-btn span{
+    background-color: rgba(255,255,255,0);
+}
+.menu-global-panel.open .menu-global-btn span:before{
+    top: 0;
+    width: 30px;
+    transform: rotateZ(495deg);
+}
+.menu-global-panel.open .menu-global-btn span:after{
+    top: 0;
+    width: 30px;
+    transform: rotateZ(585deg);
+}
+.menu-global-panel nav li:nth-child(odd){
+    height: 65px;
+    border-left: 2px solid #fff;
+    margin-left: 7px;
+}
+.menu-global-panel nav a{
+    line-height: 2.4;
+    font-size: 1.8rem;
+    color: #fff;
+}
+.menu-global-panel nav span{
+    padding-left: 15px;
+}
+/** corps du player **/
+.player-content{
+    display: flex;
+}
+.player-content>*{
+    width: 33.33333333%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/** colonne gauche **/
+/*? redimension du titre pour obliger le text à aller à la ligne à chaques mots. */
+.title-content-song{
+    color: #fff;
+    position: relative;
+    padding-bottom: 40px;
+}
+.title-content-song h2{
+    font-size: 6.5rem;
+    font-weight: bolder;
+    line-height: 0.9;
+}
+.title-content-song p{
+    width: 135px;
+    font-size: 1.15rem;
+    border-left: 2px solid #fff;
+    position: absolute;
+    left: 320px;
+    top: 200px;
+    padding-left: 5px;
+    line-height: 1.05;
+}
+article>img{
+    width: 80px;
+    height: 20px;
+}
+article>h3{
+    color: #fff;
+    padding-top: 20px;
+}
+/** placement du disque et de la fraise **/
+.player{
+    position: relative;
+}
+.player-visual{
+    position: relative;
+}
+.player-visual img:first-child{
+    position: relative;    
+    z-index: 3;
+}
+.player-visual img+img{
+    position: absolute;
+    z-index: 1;
+    top: 132px;
+    left: 103px;
+}
+/* controls player */
+.controls-player{
+    position: relative;
+    width: 400px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+.controls-player button{
+    border-top: none;
+    border-bottom: none;
+}
+.prev-song-btn{
+    width: 15px;
+    height: 20px;
+    background: url('../img/btn_backward.svg')center center no-repeat;
+    background-size: auto;
+    border-right: none;
+}
+.play-song-btn{
+/**! changer la couleur du play **/
+    width: 15px;
+    height: 20px;
+    background: url('../img/btn_play.svg')center center no-repeat;
+    background-size: auto;
+    border-left: none;
+}
+.next-song-btn{
+/**! élargir la flèche **/
+    width: 15px;
+    height: 20px;
+    background: url('../img/btn_next.svg')center center no-repeat;
+    background-size: auto;
+    border-left: none;
+    border-right: 5px;
+}
+/* tittle song */
+.player h3{
+    color: #fff;
+}
+    /**! tempo disparition des images **/
+.player-content aside img{
+    display: none;
+}
+.social img{
+    display: none;
+}

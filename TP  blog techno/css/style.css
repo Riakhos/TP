@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&display=swap" rel="stylesheet');
+/***reset de style***/
+*{
+    font-family: "Glegoo", serif;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5;
+}
+html,body{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+body{
+    font-size: 1.6rem;
+    line-height: 1.333;
+    font-family: 'Montserrat' , sans-serif;
+    background-color: #ffffff;
+/**!vérifier la license de la police**/
+}
+a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    font-weight: 200;
+    color: darkcyan;
+    padding: 20px;
+}
+ul,ol{
+    list-style: none;
+}
+/***header***/
+header{
+    display: flex;
+    background-color: black;
+    border-bottom: 2px solid;
+    color: darkcyan;
+}
+/***?logo***/
+.logo{
+    height: 80px;
+    display: flex; 
+    padding-left: 2px ;
+}
+body>header> div p{
+    width: 180px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: #ffffff;
+}
+/***?navigation***/
+body>header nav ul{
+    display: flex;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+/***section***/
+section{
+    margin-left: 140px;
+    margin-right: 140px;
+}
+/***?descriptif***/
+.titre{
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding-right: 100px;
+}
+.descriptif{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+h1{
+    font-weight: 500;
+    font-style: italic;
+}
+h5{
+    font-weight: 300;
+}
+.titre img{
+    height: 300px;
+    width: 800px;
+    object-fit: cover;
+    image-rendering: auto;
+}
+/***?suivi de page***/
+button{
+    background: url('../img/ico_arrow-right.svg') right center no-repeat; 
+    background-size: 10%;
+    background-position: 150px;
+    color: #ffffff;
+    padding-left: 5px;
+    padding-right: 150px;
+    border-radius: 1%;
+}
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 500,
+    'GRAD' 0,
+    'opsz' 24
+}
+/***?main***/
+main{
+    margin-left: 160px;
+}
+h2{
+    color: rgb(124, 122, 122);
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: bold;   
+}
+/***todo article***/
+article ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+article img{
+    height: 200px;
+    width: 700px;
+    object-fit: cover;
+}
+.http{
+    display: flex;
+}
+.url{
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 30px;
+}
+.html{
+    display: flex;
+    padding-top: 30px;
+}
+.css{
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 30px;
+}
+li h1{
+    color: rgb(124, 122, 122);
+    font-weight: bold;
+    font-style: italic;
+    padding-top: 20px;
+}
+.http h1{
+    width: 400px;
+    padding-left: 20px;
+}
+.url h1{
+    width: 500px;
+    padding-right: 20px;
+}
+.html h1{
+    width: 400px;
+    padding-left: 20px;
+}
+.css h1{
+    width: 500px;
+    padding-right: 20px;
+}
+.http h6{
+    color: rgb(207, 204, 204);
+    padding-top: 40px;
+    padding-left: 20px;
+}
+.html h6{
+    color: rgb(207, 204, 204);
+    padding-left: 20px;
+    padding-top: 40px;
+}
+.url h6{
+    color: rgb(207, 204, 204);
+    padding-top: 40px;
+}
+.css h6{
+    color: rgb(207, 204, 204);
+    padding-top: 40px;
+    padding-right: 200px;
+}
